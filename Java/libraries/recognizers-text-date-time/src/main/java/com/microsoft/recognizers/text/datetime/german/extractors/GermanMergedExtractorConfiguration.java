@@ -65,73 +65,73 @@ public class GermanMergedExtractorConfiguration extends BaseOptionsConfiguration
         return SuperfluousWordMatcher;
     }
 
-    private IDateTimeExtractor setExtractor;
+    private final IDateTimeExtractor setExtractor;
 
     public final IDateTimeExtractor getSetExtractor() {
         return setExtractor;
     }
 
-    private IExtractor integerExtractor;
+    private final IExtractor integerExtractor;
 
     public final IExtractor getIntegerExtractor() {
         return integerExtractor;
     }
 
-    private IDateExtractor dateExtractor;
+    private final IDateExtractor dateExtractor;
 
     public final IDateExtractor getDateExtractor() {
         return dateExtractor;
     }
 
-    private IDateTimeExtractor timeExtractor;
+    private final IDateTimeExtractor timeExtractor;
 
     public final IDateTimeExtractor getTimeExtractor() {
         return timeExtractor;
     }
 
-    private IDateTimeExtractor holidayExtractor;
+    private final IDateTimeExtractor holidayExtractor;
 
     public final IDateTimeExtractor getHolidayExtractor() {
         return holidayExtractor;
     }
 
-    private IDateTimeExtractor dateTimeExtractor;
+    private final IDateTimeExtractor dateTimeExtractor;
 
     public final IDateTimeExtractor getDateTimeExtractor() {
         return dateTimeExtractor;
     }
 
-    private IDateTimeExtractor durationExtractor;
+    private final IDateTimeExtractor durationExtractor;
 
     public final IDateTimeExtractor getDurationExtractor() {
         return durationExtractor;
     }
 
-    private IDateTimeExtractor datePeriodExtractor;
+    private final IDateTimeExtractor datePeriodExtractor;
 
     public final IDateTimeExtractor getDatePeriodExtractor() {
         return datePeriodExtractor;
     }
 
-    private IDateTimeExtractor timePeriodExtractor;
+    private final IDateTimeExtractor timePeriodExtractor;
 
     public final IDateTimeExtractor getTimePeriodExtractor() {
         return timePeriodExtractor;
     }
 
-    private IDateTimeZoneExtractor timeZoneExtractor;
+    private final IDateTimeZoneExtractor timeZoneExtractor;
 
     public final IDateTimeZoneExtractor getTimeZoneExtractor() {
         return timeZoneExtractor;
     }
 
-    private IDateTimeListExtractor dateTimeAltExtractor;
+    private final IDateTimeListExtractor dateTimeAltExtractor;
 
     public final IDateTimeListExtractor getDateTimeAltExtractor() {
         return dateTimeAltExtractor;
     }
 
-    private IDateTimeExtractor dateTimePeriodExtractor;
+    private final IDateTimeExtractor dateTimePeriodExtractor;
 
     public final IDateTimeExtractor getDateTimePeriodExtractor() {
         return dateTimePeriodExtractor;
@@ -167,7 +167,6 @@ public class GermanMergedExtractorConfiguration extends BaseOptionsConfiguration
     public final Pattern getSinceRegex() {
         return SinceRegex;
     }
-
 
     public final Pattern getAroundRegex() {
         return AroundRegex;

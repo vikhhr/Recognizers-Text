@@ -74,8 +74,8 @@ public class GermanDateParserConfiguration extends BaseOptionsConfiguration impl
     private final Pattern relativeDayRegex;
     private final Pattern nextPrefixRegex;
     private final Pattern previousPrefixRegex;
-    public GermanDateParserConfiguration(ICommonDateTimeParserConfiguration config) {
 
+    public GermanDateParserConfiguration(ICommonDateTimeParserConfiguration config) {
         super(config.getOptions());
 
         dateTokenPrefix = GermanDateTime.DateTokenPrefix;
@@ -332,7 +332,6 @@ public class GermanDateParserConfiguration extends BaseOptionsConfiguration impl
     }
 
     private Integer getSwift(String text) {
-
         String trimmedText = text.trim().toLowerCase();
         Integer swift = 0;
 

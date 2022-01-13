@@ -50,10 +50,10 @@ public class GermanTimePeriodExtractorConfiguration extends BaseOptionsConfigura
         }
     };
     private final IDateTimeExtractor timeZoneExtractor;
-    private String tokenBeforeDate;
-    private IDateTimeUtilityConfiguration utilityConfiguration;
-    private IDateTimeExtractor singleTimeExtractor;
-    private IExtractor integerExtractor;
+    private final String tokenBeforeDate;
+    private final IDateTimeUtilityConfiguration utilityConfiguration;
+    private final IDateTimeExtractor singleTimeExtractor;
+    private final IExtractor integerExtractor;
 
     public GermanTimePeriodExtractorConfiguration() {
         this(DateTimeOptions.None);

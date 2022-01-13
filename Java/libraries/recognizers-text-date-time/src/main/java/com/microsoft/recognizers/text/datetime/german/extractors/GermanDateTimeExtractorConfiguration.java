@@ -163,7 +163,6 @@ public class GermanDateTimeExtractorConfiguration extends BaseOptionsConfigurati
     }
 
     public boolean isConnector(String text) {
-
         text = text.trim();
 
         boolean isPreposition = Arrays.stream(RegExpUtility.getMatches(PrepositionRegex, text)).findFirst().isPresent();

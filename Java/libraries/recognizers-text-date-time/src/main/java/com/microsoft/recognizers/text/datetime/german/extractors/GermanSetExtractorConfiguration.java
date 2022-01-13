@@ -47,43 +47,43 @@ public class GermanSetExtractorConfiguration extends BaseOptionsConfiguration im
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration(options));
     }
 
-    private IDateTimeExtractor timeExtractor;
+    private final IDateTimeExtractor timeExtractor;
 
     public final IDateTimeExtractor getTimeExtractor() {
         return timeExtractor;
     }
 
-    private IDateExtractor dateExtractor;
+    private final IDateExtractor dateExtractor;
 
     public final IDateExtractor getDateExtractor() {
         return dateExtractor;
     }
 
-    private IDateTimeExtractor durationExtractor;
+    private final IDateTimeExtractor durationExtractor;
 
     public final IDateTimeExtractor getDurationExtractor() {
         return durationExtractor;
     }
 
-    private IDateTimeExtractor dateTimeExtractor;
+    private final IDateTimeExtractor dateTimeExtractor;
 
     public final IDateTimeExtractor getDateTimeExtractor() {
         return dateTimeExtractor;
     }
 
-    private IDateTimeExtractor datePeriodExtractor;
+    private final IDateTimeExtractor datePeriodExtractor;
 
     public final IDateTimeExtractor getDatePeriodExtractor() {
         return datePeriodExtractor;
     }
 
-    private IDateTimeExtractor timePeriodExtractor;
+    private final IDateTimeExtractor timePeriodExtractor;
 
     public final IDateTimeExtractor getTimePeriodExtractor() {
         return timePeriodExtractor;
     }
 
-    private IDateTimeExtractor dateTimePeriodExtractor;
+    private final IDateTimeExtractor dateTimePeriodExtractor;
 
     public final IDateTimeExtractor getDateTimePeriodExtractor() {
         return dateTimePeriodExtractor;

@@ -104,7 +104,6 @@ public class GermanDatePeriodParserConfiguration
     private final ImmutableMap<String, Integer> specialDecadeCases;
 
     public GermanDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) {
-
         super(config.getOptions());
 
         tokenBeforeDate = GermanDateTime.TokenBeforeDate;
@@ -487,7 +486,6 @@ public class GermanDatePeriodParserConfiguration
 
     @Override
     public int getSwiftDayOrMonth(final String text) {
-
         final String trimmedText = text.trim().toLowerCase();
 
         if (afterNextPrefixRegex.matcher(trimmedText).find()) {
@@ -508,7 +506,6 @@ public class GermanDatePeriodParserConfiguration
 
     @Override
     public int getSwiftYear(final String text) {
-
         final String trimmedText = text.trim().toLowerCase();
 
         if (nextPrefixRegex.matcher(trimmedText).find()) {
@@ -575,7 +572,7 @@ public class GermanDatePeriodParserConfiguration
         return GermanDateTime.YearToDateTerms.stream().anyMatch(trimmedText::equals);
     }
 
-    public boolean IsFortnight(final String text)
+    public boolean isFortnight(final String text)
     {
         return false;
     }

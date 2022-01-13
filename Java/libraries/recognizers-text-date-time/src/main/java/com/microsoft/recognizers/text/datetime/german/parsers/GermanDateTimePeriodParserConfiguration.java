@@ -70,7 +70,6 @@ public class GermanDateTimePeriodParserConfiguration extends BaseOptionsConfigur
     public static final Pattern NightStartEndRegex = RegExpUtility.getSafeRegExp(GermanDateTime.NightStartEndRegex);
 
     public GermanDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) {
-
         super(config.getOptions());
 
         tokenBeforeDate = GermanDateTime.TokenBeforeDate;
@@ -288,12 +287,10 @@ public class GermanDateTimePeriodParserConfiguration extends BaseOptionsConfigur
 
     @Override
     public MatchedTimeRangeResult getMatchedTimeRange(String text, String timeStr, int beginHour, int endHour, int endMin) {
-
         String trimmedText = text.trim().toLowerCase();
         beginHour = 0;
         endHour = 0;
         endMin = 0;
-        timeStr = null;
         boolean result = false;
 
         if (checkRegex(MorningStartEndRegex, trimmedText)) {
@@ -326,7 +323,6 @@ public class GermanDateTimePeriodParserConfiguration extends BaseOptionsConfigur
 
     @Override
     public int getSwiftPrefix(String text) {
-
         String trimmedText = text.trim().toLowerCase();
 
         Pattern regex = Pattern.compile(GermanDateTime.PreviousPrefixRegex);

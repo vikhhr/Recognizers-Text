@@ -53,12 +53,11 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
     private final IDateTimeUtilityConfiguration utilityConfiguration;
 
     public GermanDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) {
-
         super(config.getOptions());
 
         tokenBeforeDate = GermanDateTime.TokenBeforeDate;
         tokenBeforeTime = GermanDateTime.TokenBeforeTime;
-        
+
         cardinalExtractor = config.getCardinalExtractor();
         integerExtractor = config.getIntegerExtractor();
         numberParser = config.getNumberParser();
@@ -68,7 +67,7 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
         dateParser = config.getDateParser();
         timeParser = config.getTimeParser();
         durationParser = config.getDurationParser();
-        
+
         nowRegex = GermanDateTimeExtractorConfiguration.NowRegex;
 
         amTimeRegex = RegExpUtility.getSafeRegExp(GermanDateTime.AMTimeRegex);
@@ -215,9 +214,8 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
 
     @Override
     public ResultTimex getMatchedNowTimex(String text) {
-
         String trimmedText = text.trim().toLowerCase();
-        
+
         if (trimmedText.endsWith("jetzt") ||
                 trimmedText.equals("momentan") ||
                 trimmedText.equals("gerade") ||
@@ -240,10 +238,9 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
 
     @Override
     public int getSwiftDay(String text) {
-
         String trimmedText = text.trim().toLowerCase();
-
         int swift = 0;
+
         if (trimmedText.startsWith("nächsten") ||
                 trimmedText.startsWith("nächste") ||
                 trimmedText.startsWith("nächstes") ||
@@ -261,10 +258,9 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
 
     @Override
     public int getHour(String text, int hour) {
-
         String trimmedText = text.trim().toLowerCase();
         int result = hour;
-        
+
         if ((trimmedText.endsWith("morgen") || trimmedText.endsWith("morgens"))
                 && hour >= Constants.HalfDayHourCount) {
             result -= Constants.HalfDayHourCount;
@@ -272,7 +268,7 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
                 && hour < Constants.HalfDayHourCount) {
             result += Constants.HalfDayHourCount;
         }
-        
+
         return result;
     }
 

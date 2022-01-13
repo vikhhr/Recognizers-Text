@@ -39,7 +39,6 @@ public class GermanTimePeriodParserConfiguration extends BaseOptionsConfiguratio
     private final IDateTimeUtilityConfiguration utilityConfiguration;
 
     public GermanTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) {
-
         super(config.getOptions());
 
         timeExtractor = config.getTimeExtractor();
@@ -125,7 +124,6 @@ public class GermanTimePeriodParserConfiguration extends BaseOptionsConfiguratio
 
     @Override
     public MatchedTimeRangeResult getMatchedTimexRange(String text, String timex, int beginHour, int endHour, int endMin) {
-
         String trimmedText = text.trim().toLowerCase();
         if (trimmedText.endsWith("s")) {
             trimmedText = trimmedText.substring(0, trimmedText.length() - 1);

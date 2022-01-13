@@ -112,18 +112,17 @@ public class GermanTimeExtractorConfiguration extends BaseOptionsConfiguration i
         return TimeBeforeAfterRegex;
     }
 
-    private IDateTimeExtractor durationExtractor;
+    private final IDateTimeExtractor durationExtractor;
 
     public final IDateTimeExtractor getDurationExtractor() {
         return durationExtractor;
     }
 
-    private IDateTimeExtractor timeZoneExtractor;
+    private final IDateTimeExtractor timeZoneExtractor;
 
     public final IDateTimeExtractor getTimeZoneExtractor() {
         return timeZoneExtractor;
     }
-
 
     public GermanTimeExtractorConfiguration() {
         this(DateTimeOptions.None);

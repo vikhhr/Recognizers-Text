@@ -18,30 +18,29 @@ import java.util.regex.Pattern;
 
 public class GermanSetParserConfiguration extends BaseOptionsConfiguration implements ISetParserConfiguration {
 
-    private IDateTimeParser timeParser;
-    private IDateTimeParser dateParser;
-    private ImmutableMap<String, String> unitMap;
-    private IDateTimeParser dateTimeParser;
-    private IDateTimeParser durationParser;
-    private IDateTimeExtractor timeExtractor;
-    private IDateExtractor dateExtractor;
-    private IDateTimeParser datePeriodParser;
-    private IDateTimeParser timePeriodParser;
-    private IDateTimeExtractor durationExtractor;
-    private IDateTimeExtractor dateTimeExtractor;
-    private IDateTimeParser dateTimePeriodParser;
-    private IDateTimeExtractor datePeriodExtractor;
-    private IDateTimeExtractor timePeriodExtractor;
-    private IDateTimeExtractor dateTimePeriodExtractor;
-    private Pattern eachDayRegex;
-    private Pattern setEachRegex;
-    private Pattern periodicRegex;
-    private Pattern eachUnitRegex;
-    private Pattern setWeekDayRegex;
-    private Pattern eachPrefixRegex;
+    private final IDateTimeParser timeParser;
+    private final IDateTimeParser dateParser;
+    private final ImmutableMap<String, String> unitMap;
+    private final IDateTimeParser dateTimeParser;
+    private final IDateTimeParser durationParser;
+    private final IDateTimeExtractor timeExtractor;
+    private final IDateExtractor dateExtractor;
+    private final IDateTimeParser datePeriodParser;
+    private final IDateTimeParser timePeriodParser;
+    private final IDateTimeExtractor durationExtractor;
+    private final IDateTimeExtractor dateTimeExtractor;
+    private final IDateTimeParser dateTimePeriodParser;
+    private final IDateTimeExtractor datePeriodExtractor;
+    private final IDateTimeExtractor timePeriodExtractor;
+    private final IDateTimeExtractor dateTimePeriodExtractor;
+    private final Pattern eachDayRegex;
+    private final Pattern setEachRegex;
+    private final Pattern periodicRegex;
+    private final Pattern eachUnitRegex;
+    private final Pattern setWeekDayRegex;
+    private final Pattern eachPrefixRegex;
 
     public GermanSetParserConfiguration(ICommonDateTimeParserConfiguration config) {
-
         super(config.getOptions());
 
         durationExtractor = config.getDurationExtractor();
@@ -154,14 +153,8 @@ public class GermanSetParserConfiguration extends BaseOptionsConfiguration imple
     }
 
     public MatchedTimexResult getMatchedDailyTimex(String text) {
-
         MatchedTimexResult result = new MatchedTimexResult();
-
         String trimmedText = text.trim().toLowerCase(Locale.ROOT);
-
-        float durationLength = 1; // Default value
-        float multiplier = 1;
-        String durationType;
 
         if (trimmedText.equals("täglich") ||
                 trimmedText.equals("täglicher") ||
@@ -210,7 +203,7 @@ public class GermanSetParserConfiguration extends BaseOptionsConfiguration imple
             result.setTimex("P1Y");
         }
 
-        if (result.getTimex() != "") {
+        if (!"".equals(result.getTimex())) {
             result.setResult(true);
         }
 
@@ -218,7 +211,6 @@ public class GermanSetParserConfiguration extends BaseOptionsConfiguration imple
     }
 
     public MatchedTimexResult getMatchedUnitTimex(String text) {
-
         MatchedTimexResult result = new MatchedTimexResult();
         String trimmedText = text.trim().toLowerCase(Locale.ROOT);
 
@@ -232,7 +224,7 @@ public class GermanSetParserConfiguration extends BaseOptionsConfiguration imple
             result.setTimex("P1Y");
         }
 
-        if (result.getTimex() != "") {
+        if (!"".equals(result.getTimex())) {
             result.setResult(true);
         }
 

@@ -41,7 +41,6 @@ public class GermanDurationExtractorConfiguration extends BaseOptionsConfigurati
     }
 
     public GermanDurationExtractorConfiguration(DateTimeOptions options) {
-
         super(options);
 
         cardinalExtractor = CardinalExtractor.getInstance();

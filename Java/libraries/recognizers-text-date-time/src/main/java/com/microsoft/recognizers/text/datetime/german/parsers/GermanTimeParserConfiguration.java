@@ -43,7 +43,6 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
     private final Pattern threeQuarterPastTokenRegex = RegExpUtility.getSafeRegExp(GermanDateTime.ThreeQuarterPastTokenRegex);
 
     public GermanTimeParserConfiguration(ICommonDateTimeParserConfiguration config) {
-
         super(config.getOptions());
 
         numbers = config.getNumbers();
@@ -86,7 +85,6 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
 
     @Override
     public PrefixAdjustResult adjustByPrefix(String prefix, int hour, int min, boolean hasMin) {
-
         int deltaMin;
         String trimmedPrefix = prefix.trim().toLowerCase();
 
@@ -101,7 +99,6 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
         } else if (checkMatch(threeQuarterPastTokenRegex, trimmedPrefix)) {
             deltaMin = 45;
         } else {
-
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(GermanTimeExtractorConfiguration.LessThanOneHour, trimmedPrefix)).findFirst();
             String minStr = match.get().getGroup("deltamin").value;
             if (!StringUtility.isNullOrWhiteSpace(minStr)) {
@@ -129,23 +126,21 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
 
     @Override
     public SuffixAdjustResult adjustBySuffix(String suffix, int hour, int min, boolean hasMin, boolean hasAm, boolean hasPm) {
-
         String lowerSuffix = suffix.toLowerCase();
         int deltaHour = 0;
         ConditionalMatch match = RegexExtension.matchExact(timeSuffixFull, lowerSuffix, true);
-        if (match.getSuccess()) {
 
+        if (match.getSuccess()) {
             String oclockStr = match.getMatch().get().getGroup("oclock").value;
             if (StringUtility.isNullOrEmpty(oclockStr)) {
-
                 String amStr = match.getMatch().get().getGroup(Constants.AmGroupName).value;
+
                 if (!StringUtility.isNullOrEmpty(amStr)) {
                     if (hour >= Constants.HalfDayHourCount) {
                         deltaHour = -Constants.HalfDayHourCount;
                     } else {
                         hasAm = true;
                     }
-
                 }
 
                 String pmStr = match.getMatch().get().getGroup(Constants.PmGroupName).value;
@@ -163,11 +158,9 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
                             } else {
                                 hasAm = true;
                             }
-
                         } else {
                             hasPm = true;
                         }
-
                     } else if (checkMatch(nightRegex, pmStr)) {
                         //For hour <= 3 or == 12, we treat it as am, for example 1 in the night (midnight) == 1am
                         if (hour <= 3 || hour == Constants.HalfDayHourCount) {
@@ -180,7 +173,6 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
                         } else {
                             hasPm = true;
                         }
-
                     } else {
                         hasPm = true;
                     }

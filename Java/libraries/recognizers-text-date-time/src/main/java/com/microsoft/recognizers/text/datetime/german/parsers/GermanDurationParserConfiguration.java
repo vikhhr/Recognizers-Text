@@ -37,7 +37,6 @@ public class GermanDurationParserConfiguration extends BaseOptionsConfiguration 
     private final ImmutableMap<String, Double> doubleNumbers;
 
     public GermanDurationParserConfiguration(ICommonDateTimeParserConfiguration config) {
-
         super(config.getOptions());
 
         cardinalExtractor = config.getCardinalExtractor();

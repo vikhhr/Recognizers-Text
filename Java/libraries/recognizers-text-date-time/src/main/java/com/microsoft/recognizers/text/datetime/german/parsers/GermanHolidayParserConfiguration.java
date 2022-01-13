@@ -30,7 +30,6 @@ public class GermanHolidayParserConfiguration extends BaseHolidayParserConfigura
     private final Pattern previousPrefixRegex;
 
     public GermanHolidayParserConfiguration() {
-
         super();
 
         this.setHolidayRegexList(GermanHolidayExtractorConfiguration.HolidayRegexList);
@@ -402,7 +401,6 @@ public class GermanHolidayParserConfiguration extends BaseHolidayParserConfigura
 
     @Override
     public int getSwiftYear(String text) {
-
         String trimmedText = StringUtility.trimStart(StringUtility.trimEnd(text)).toLowerCase(Locale.ROOT);
         int swift = -10;
         Optional<Match> matchNextPrefixRegex = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText)).findFirst();

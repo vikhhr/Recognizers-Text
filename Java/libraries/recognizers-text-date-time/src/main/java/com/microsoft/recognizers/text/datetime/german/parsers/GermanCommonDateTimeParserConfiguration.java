@@ -84,7 +84,6 @@ public class GermanCommonDateTimeParserConfiguration extends BaseDateParserConfi
     private final IDateTimeParser timeZoneParser;
 
     public GermanCommonDateTimeParserConfiguration(DateTimeOptions options) {
-
         super(options);
 
         utilityConfiguration = new GermanDatetimeUtilityConfiguration();

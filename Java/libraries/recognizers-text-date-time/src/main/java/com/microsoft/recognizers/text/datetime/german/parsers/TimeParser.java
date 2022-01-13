@@ -38,6 +38,7 @@ public class TimeParser extends BaseTimeParser {
         String lowerText = text.toLowerCase();
 
         ConditionalMatch match = RegexExtension.matchExact(GermanTimeExtractorConfiguration.IshRegex, lowerText, true);
+
         if (match.getSuccess()) {
             String hourStr = match.getMatch().get().getGroup(Constants.HourGroupName).value;
             int hour = Constants.HalfDayHourCount;
